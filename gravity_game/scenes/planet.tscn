@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpaw1dgbmrkti"]
+[gd_scene load_steps=8 format=3 uid="uid://bpaw1dgbmrkti"]
 
 [ext_resource type="Script" path="res://scripts/planet.gd" id="1_hmtsp"]
+[ext_resource type="Texture2D" uid="uid://dfqiovgynqkeh" path="res://icon.svg" id="2_xehg2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l40aq"]
 radius = 88.3629
@@ -8,7 +9,45 @@ radius = 88.3629
 [sub_resource type="CircleShape2D" id="CircleShape2D_4b54k"]
 radius = 408.314
 
-[node name="Planet" type="StaticBody2D"]
+[sub_resource type="Animation" id="Animation_bvvf0"]
+resource_name = "spin"
+length = 16.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_mbctx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwidh"]
+_data = {
+"RESET": SubResource("Animation_mbctx"),
+"spin": SubResource("Animation_bvvf0")
+}
+
+[node name="Planet" type="AnimatableBody2D"]
 script = ExtResource("1_hmtsp")
 metadata/_edit_group_ = true
 
@@ -20,4 +59,14 @@ shape = SubResource("CircleShape2D_l40aq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_4b54k")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pwidh")
+}
+autoplay = "spin"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xehg2")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
