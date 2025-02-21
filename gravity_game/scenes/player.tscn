@@ -3,22 +3,31 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l070v"]
 [ext_resource type="Texture2D" uid="uid://dfqiovgynqkeh" path="res://icon.svg" id="2_dq6kd"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3l5f6"]
-height = 32.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_6hnej"]
+radius = 16.0
 
 [node name="Player" type="CharacterBody2D"]
 floor_stop_on_slope = false
 script = ExtResource("1_l070v")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = -1.5708
-shape = SubResource("CapsuleShape2D_3l5f6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4.76837e-07)
 rotation = -1.5708
-scale = Vector2(0.1875, 0.3125)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_dq6kd")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("CircleShape2D_6hnej")
+
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Fuel" type="Label" parent="."]
+offset_left = -24.0
+offset_top = -32.0
+offset_right = 30.0
+offset_bottom = -9.0
+text = "Fuel:2s"
