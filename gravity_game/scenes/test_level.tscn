@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs62to3foola3"]
+
+[ext_resource type="PackedScene" uid="uid://bpaw1dgbmrkti" path="res://scenes/planet.tscn" id="1_xoc1r"]
+[ext_resource type="PackedScene" uid="uid://3c3nr2wfmmss" path="res://scenes/player.tscn" id="2_peiax"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Planet" parent="." instance=ExtResource("1_xoc1r")]
+position = Vector2(328, 128)
+
+[node name="Player" parent="." instance=ExtResource("2_peiax")]
+position = Vector2(-16, 136)
+
+[node name="Planet2" parent="." instance=ExtResource("1_xoc1r")]
+position = Vector2(1288, 576)
+
+[node name="Planet3" parent="." instance=ExtResource("1_xoc1r")]
+position = Vector2(1072, 1248)
