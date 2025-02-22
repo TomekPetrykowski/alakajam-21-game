@@ -9,6 +9,7 @@ radius = 16.0
 [node name="Player" type="CharacterBody2D"]
 floor_stop_on_slope = false
 script = ExtResource("1_l070v")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4.76837e-07)
@@ -22,12 +23,9 @@ shape = SubResource("CircleShape2D_6hnej")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
 [node name="Fuel" type="Label" parent="."]
 offset_left = -24.0
 offset_top = -32.0
 offset_right = 30.0
 offset_bottom = -9.0
-text = "Fuel:2s"
+text = "Fuel:3s"
