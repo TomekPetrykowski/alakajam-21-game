@@ -9,10 +9,10 @@
 position = Vector2(328, 128)
 
 [node name="Player" parent="." instance=ExtResource("2_peiax")]
-position = Vector2(-16, 136)
+position = Vector2(-200, 136)
 
 [node name="Planet2" parent="." instance=ExtResource("1_xoc1r")]
 position = Vector2(1288, 576)
 
 [node name="Planet3" parent="." instance=ExtResource("1_xoc1r")]
-position = Vector2(1072, 1248)
+position = Vector2(464, 1304)
