@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b631r45l0aswy"]
 
 [ext_resource type="Script" path="res://scripts/planet.gd" id="1_yjqid"]
-[ext_resource type="Texture2D" uid="uid://bbsq5ssmj5ucn" path="res://assets/sprites/planets/big_earth.png" id="2_dgsga"]
+[ext_resource type="Texture2D" uid="uid://cyiw8m1bhkvnv" path="res://assets/sprites/planets/big_earth.png" id="2_dgsga"]
 [ext_resource type="PackedScene" uid="uid://b0kdyw2ujk16m" path="res://scenes/house_big.tscn" id="3_nojwk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l40aq"]
