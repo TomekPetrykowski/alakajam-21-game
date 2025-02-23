@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://touyha7gxvkc" path="res://assets/sprites/Lazer_gun.png" id="3_xo8nb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6hnej"]
-radius = 14.0
+radius = 7.0
 
 [sub_resource type="Animation" id="Animation_kk4k3"]
 length = 0.001
@@ -107,10 +107,9 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(4.76837e-07, 0)
-scale = Vector2(2, 2)
 texture = ExtResource("2_xqawr")
 hframes = 4
-vframes = 2
+vframes = 3
 frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -120,11 +119,14 @@ shape = SubResource("CircleShape2D_6hnej")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Fuel" type="Label" parent="."]
-offset_left = -24.0
-offset_top = -32.0
-offset_right = 30.0
-offset_bottom = -9.0
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 18.0
+offset_bottom = -11.0
+theme_override_font_sizes/font_size = 10
 text = "Fuel:3s"
+horizontal_alignment = 1
+uppercase = true
 
 [node name="Weapon" type="Sprite2D" parent="."]
 texture = ExtResource("3_xo8nb")

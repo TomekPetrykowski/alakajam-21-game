@@ -110,7 +110,7 @@ func _physics_process(delta: float) -> void:
 		#$Sprite2D.flip_v = true
 		#$Weapon.flip_v = true
 	$Weapon.rotation=get_angle_to(get_global_mouse_position())
-	$Weapon.position = (get_local_mouse_position().normalized())*6*4
+	$Weapon.position = (get_local_mouse_position().normalized())*6*3
 	#print(velocity,planet_movement,jetpack_movement)
 	
 
