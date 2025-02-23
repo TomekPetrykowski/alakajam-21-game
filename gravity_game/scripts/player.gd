@@ -48,16 +48,16 @@ func _physics_process(delta: float) -> void:
 		self.fuel += delta*2
 		planet_movement.y = 0
 		$AnimationPlayer.play("idle")
-	#else:
-		#if jetpacking:
-			#$AnimationPlayer.play("jetpacking")
-		#else:
-			#$AnimationPlayer.play("jump")
+	else:
+		if jetpacking:
+			$AnimationPlayer.play("jetpacking")
+		
 	if Input.is_action_just_pressed("ui_accept"):
 		if is_on_floor():
 			planet_movement.y = JUMP_VELOCITY
 		elif fuel >= 0.0:
 			jetpacking = true
+			
 	if Input.is_action_just_released("ui_accept") and jetpacking:
 		if rotation_point != Vector2.ZERO:
 			stable = true
@@ -89,12 +89,12 @@ func _physics_process(delta: float) -> void:
 		vector_rotation += 0.1*direction
 		$Sprite2D.rotation += 0.1*direction
 	elif direction:
-		if direction <0:
+		if direction < 0:
 			$Sprite2D.flip_v = true
 		else:
 			$Sprite2D.flip_v = false
-		if is_on_floor():
-			$AnimationPlayer.play("walking")
+		#if is_on_floor():
+		$AnimationPlayer.play("walking")
 		planet_movement.x = direction * SPEED
 	else:
 		$AnimationPlayer.play("idle")
