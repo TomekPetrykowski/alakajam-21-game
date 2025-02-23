@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkfgbswp6yrrx"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_kh25t"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kh25t")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 216.0
+offset_right = 552.0
+offset_bottom = 264.0
+text = "Start
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.039
+anchor_bottom = 0.048
+offset_left = 400.0
+offset_top = 120.0
+offset_right = 560.064
+offset_bottom = 176.96
+text = "Dumi's doom day"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

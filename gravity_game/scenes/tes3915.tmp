@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs62to3foola3"]
+
+[ext_resource type="PackedScene" uid="uid://bpaw1dgbmrkti" path="res://scenes/planet.tscn" id="1_xoc1r"]
+[ext_resource type="PackedScene" uid="uid://3c3nr2wfmmss" path="res://scenes/player.tscn" id="2_peiax"]
+[ext_resource type="Texture2D" uid="uid://c3b2imtkeg4ok" path="res://assets/sprites/background.png" id="3_eppma"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -1552.0
+offset_top = -1624.0
+offset_right = 4624.0
+offset_bottom = 2976.0
+texture = ExtResource("3_eppma")
+stretch_mode = 1
+
+[node name="Planet" parent="." instance=ExtResource("1_xoc1r")]
+position = Vector2(328, 128)
+
+[node name="Planet2" parent="." instance=ExtResource("1_xoc1r")]
+position = Vector2(1696, 2064)
+
+[node name="Planet3" parent="." instance=ExtResource("1_xoc1r")]
+position = Vector2(2784, 352)
+scale = Vector2(3, 3)
+
+[node name="Player" parent="." instance=ExtResource("2_peiax")]
+position = Vector2(-200, 136)

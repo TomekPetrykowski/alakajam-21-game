@@ -1,18 +1,140 @@
-[gd_scene load_steps=3 format=3 uid="uid://cs62to3foola3"]
+[gd_scene load_steps=8 format=3 uid="uid://cs62to3foola3"]
 
 [ext_resource type="PackedScene" uid="uid://bpaw1dgbmrkti" path="res://scenes/planet.tscn" id="1_xoc1r"]
 [ext_resource type="PackedScene" uid="uid://3c3nr2wfmmss" path="res://scenes/player.tscn" id="2_peiax"]
+[ext_resource type="Texture2D" uid="uid://w75khnlbevf0" path="res://assets/sprites/background/background.png" id="3_eppma"]
+[ext_resource type="PackedScene" uid="uid://mohm1xx13ivs" path="res://scenes/planet_mid.tscn" id="3_gai3n"]
+[ext_resource type="PackedScene" uid="uid://bnoploch51opg" path="res://scenes/enemy.tscn" id="5_gh283"]
+[ext_resource type="PackedScene" uid="uid://b631r45l0aswy" path="res://scenes/planet_big.tscn" id="6_6hor8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2ck5"]
+size = Vector2(172, 5752)
 
 [node name="TestLevel" type="Node2D"]
+scale = Vector2(2, 2)
 
-[node name="Planet" parent="." instance=ExtResource("1_xoc1r")]
-position = Vector2(328, 128)
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -1552.0
+offset_top = -1624.0
+offset_right = 5580.0
+offset_bottom = 3808.0
+texture = ExtResource("3_eppma")
+stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("2_peiax")]
-position = Vector2(-200, 136)
+unique_name_in_owner = true
+position = Vector2(-344, 204)
 
-[node name="Planet2" parent="." instance=ExtResource("1_xoc1r")]
-position = Vector2(1288, 576)
+[node name="Enemies" type="Node2D" parent="."]
 
-[node name="Planet3" parent="." instance=ExtResource("1_xoc1r")]
-position = Vector2(464, 1304)
+[node name="Enemy" parent="Enemies" instance=ExtResource("5_gh283")]
+position = Vector2(-36, 60)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("5_gh283")]
+position = Vector2(112, 32)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("5_gh283")]
+position = Vector2(1844, 1320)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("5_gh283")]
+position = Vector2(1968, 1240)
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource("5_gh283")]
+position = Vector2(444, 408)
+
+[node name="Enemy6" parent="Enemies" instance=ExtResource("5_gh283")]
+position = Vector2(412, 600)
+
+[node name="Enemy7" parent="Enemies" instance=ExtResource("5_gh283")]
+position = Vector2(328, 500)
+
+[node name="Enemy8" parent="Enemies" instance=ExtResource("5_gh283")]
+position = Vector2(372, 404)
+
+[node name="Enemy9" parent="Enemies" instance=ExtResource("5_gh283")]
+position = Vector2(1720, 1212)
+
+[node name="Enemy10" parent="Enemies" instance=ExtResource("5_gh283")]
+position = Vector2(1924, 944)
+
+[node name="Enemy11" parent="Enemies" instance=ExtResource("5_gh283")]
+position = Vector2(2036, 1096)
+
+[node name="Enemy12" parent="Enemies" instance=ExtResource("5_gh283")]
+position = Vector2(1732, 1020)
+
+[node name="Planets" type="Node2D" parent="."]
+
+[node name="Planet4" parent="Planets" instance=ExtResource("6_6hor8")]
+position = Vector2(1856, 1140)
+
+[node name="Planet6" parent="Planets" instance=ExtResource("1_xoc1r")]
+position = Vector2(928, 1128)
+
+[node name="Planet7" parent="Planets" instance=ExtResource("3_gai3n")]
+position = Vector2(424, 1652)
+
+[node name="Planet8" parent="Planets" instance=ExtResource("1_xoc1r")]
+position = Vector2(2892, 636)
+
+[node name="Planet9" parent="Planets" instance=ExtResource("3_gai3n")]
+position = Vector2(2896, 1752)
+
+[node name="Planet10" parent="Planets" instance=ExtResource("1_xoc1r")]
+position = Vector2(1692, 2184)
+
+[node name="Planet11" parent="Planets" instance=ExtResource("1_xoc1r")]
+position = Vector2(1128, 300)
+
+[node name="Planet12" parent="Planets" instance=ExtResource("3_gai3n")]
+position = Vector2(3240, -112)
+
+[node name="Planet13" parent="Planets" instance=ExtResource("3_gai3n")]
+position = Vector2(380, 2448)
+
+[node name="Planet14" parent="Planets" instance=ExtResource("1_xoc1r")]
+position = Vector2(2668, 2664)
+
+[node name="Planet" parent="Planets" instance=ExtResource("1_xoc1r")]
+position = Vector2(55, 68)
+
+[node name="Planet2" parent="Planets" instance=ExtResource("1_xoc1r")]
+position = Vector2(-242, 492)
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="border" type="StaticBody2D" parent="Borders"]
+position = Vector2(-1364, -112)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/border"]
+position = Vector2(204.5, 1136)
+shape = SubResource("RectangleShape2D_o2ck5")
+
+[node name="border2" type="StaticBody2D" parent="Borders"]
+position = Vector2(-1364, -112)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/border2"]
+position = Vector2(6060, 1096)
+shape = SubResource("RectangleShape2D_o2ck5")
+
+[node name="border3" type="StaticBody2D" parent="Borders"]
+position = Vector2(1976, 632)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/border3"]
+position = Vector2(-208, 2888)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_o2ck5")
+
+[node name="border4" type="StaticBody2D" parent="Borders"]
+position = Vector2(1976, 632)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/border4"]
+position = Vector2(-180, -1884)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_o2ck5")
+
+[node name="Planet" parent="." instance=ExtResource("3_gai3n")]
+position = Vector2(412, 512)
+
+[node name="Planet2" parent="." instance=ExtResource("3_gai3n")]
+position = Vector2(1740, 244)
