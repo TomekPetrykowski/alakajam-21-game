@@ -48,11 +48,11 @@ func _physics_process(delta: float) -> void:
 		self.fuel += delta*2
 		planet_movement.y = 0
 		$AnimationPlayer.play("idle")
-	else:
-		if jetpacking:
-			$AnimationPlayer.play("jetpacking")
-		else:
-			$AnimationPlayer.play("jump")
+	#else:
+		#if jetpacking:
+			#$AnimationPlayer.play("jetpacking")
+		#else:
+			#$AnimationPlayer.play("jump")
 	if Input.is_action_just_pressed("ui_accept"):
 		if is_on_floor():
 			planet_movement.y = JUMP_VELOCITY
@@ -119,6 +119,7 @@ func _physics_process(delta: float) -> void:
 	$Weapon.rotation=get_angle_to(get_global_mouse_position())
 	$Weapon.position = (get_local_mouse_position().normalized())*6*3
 	#print(velocity,planet_movement,jetpack_movement)
+	#print(position)
 	
 
 func _change_fuel(new):
