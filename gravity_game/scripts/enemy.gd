@@ -16,6 +16,7 @@ func _hp_changed(new):
 	if planet!=null:
 		planet.attacked = true
 	if new<=0:
+		Vars.ships_destroyed+=1
 		queue_free()
 	else:
 		hp=new

@@ -8,7 +8,7 @@
 radius = 128.25
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4b54k"]
-radius = 344.093
+radius = 384.0
 
 [sub_resource type="Animation" id="Animation_mbctx"]
 length = 0.001
@@ -50,6 +50,7 @@ _data = {
 
 [node name="Planet" type="AnimatableBody2D"]
 script = ExtResource("1_yjqid")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_l40aq")

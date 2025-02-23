@@ -31,7 +31,7 @@ var hp = 20 : set = _hp_changed
 
 func _hp_changed(new):
 	if new<=0:
-		print(":(")
+		get_tree().change_scene_to_file("res://scenes/end.tscn")
 	else:
 		hp_label.text = "Hp:" + str(new)
 		hp=new

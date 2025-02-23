@@ -68,9 +68,6 @@ position = Vector2(1732, 1020)
 [node name="Planet4" parent="Planets" instance=ExtResource("6_6hor8")]
 position = Vector2(1856, 1140)
 
-[node name="Planet5" parent="Planets" instance=ExtResource("3_gai3n")]
-position = Vector2(1800, 96)
-
 [node name="Planet6" parent="Planets" instance=ExtResource("1_xoc1r")]
 position = Vector2(928, 1128)
 
@@ -104,9 +101,6 @@ position = Vector2(55, 68)
 [node name="Planet2" parent="Planets" instance=ExtResource("1_xoc1r")]
 position = Vector2(-242, 492)
 
-[node name="Planet3" parent="Planets" instance=ExtResource("3_gai3n")]
-position = Vector2(430.5, 506.5)
-
 [node name="Borders" type="Node2D" parent="."]
 
 [node name="border" type="StaticBody2D" parent="Borders"]
@@ -138,3 +132,9 @@ position = Vector2(1976, 632)
 position = Vector2(-180, -1884)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_o2ck5")
+
+[node name="Planet" parent="." instance=ExtResource("3_gai3n")]
+position = Vector2(412, 512)
+
+[node name="Planet2" parent="." instance=ExtResource("3_gai3n")]
+position = Vector2(1740, 244)

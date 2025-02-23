@@ -8,7 +8,8 @@ func _attacked_changed(new):
 	if new and not attacked:
 		attacked = true
 		for i in ships:
-			i.angry = true
+			if i:
+				i.angry = true
 
 
 
