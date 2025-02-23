@@ -29,4 +29,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if not attacked:
 			ships.append(area)
 		area.orbit_point = position
+		area.radius = $CollisionShape2D.shape.radius *2
 		area.planet = self

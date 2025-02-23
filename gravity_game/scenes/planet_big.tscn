@@ -1,14 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://mohm1xx13ivs"]
+[gd_scene load_steps=9 format=3 uid="uid://b631r45l0aswy"]
 
-[ext_resource type="Script" path="res://scripts/planet.gd" id="1_dc0vp"]
-[ext_resource type="Texture2D" uid="uid://dcoe1vw5fggu3" path="res://assets/sprites/planets/blue_mid_planet.png" id="2_r7knu"]
-[ext_resource type="PackedScene" uid="uid://bcjm4bvut0k31" path="res://scenes/house_mid.tscn" id="3_mtame"]
+[ext_resource type="Script" path="res://scripts/planet.gd" id="1_yjqid"]
+[ext_resource type="Texture2D" uid="uid://bbsq5ssmj5ucn" path="res://assets/sprites/planets/big_earth.png" id="2_dgsga"]
+[ext_resource type="PackedScene" uid="uid://b0kdyw2ujk16m" path="res://scenes/house_big.tscn" id="3_nojwk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l40aq"]
-radius = 64.0
+radius = 128.25
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4b54k"]
-radius = 232.0
+radius = 344.093
 
 [sub_resource type="Animation" id="Animation_mbctx"]
 length = 0.001
@@ -49,8 +49,7 @@ _data = {
 }
 
 [node name="Planet" type="AnimatableBody2D"]
-script = ExtResource("1_dc0vp")
-metadata/_edit_group_ = true
+script = ExtResource("1_yjqid")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_l40aq")
@@ -58,7 +57,6 @@ shape = SubResource("CircleShape2D_l40aq")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-8, 0)
 shape = SubResource("CircleShape2D_4b54k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -68,32 +66,11 @@ libraries = {
 autoplay = "spin"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_r7knu")
+texture = ExtResource("2_dgsga")
 
-[node name="House5" parent="." instance=ExtResource("3_mtame")]
-position = Vector2(51, 49)
-rotation = 2.35619
-scale = Vector2(1, 1)
-
-[node name="House6" parent="." instance=ExtResource("3_mtame")]
-position = Vector2(-64, 32)
-rotation = -2.0944
-scale = Vector2(1, 1)
-
-[node name="House" parent="." instance=ExtResource("3_mtame")]
-position = Vector2(0, -71)
-
-[node name="House4" parent="." instance=ExtResource("3_mtame")]
-position = Vector2(-64, -32)
-rotation = -1.0472
-
-[node name="House3" parent="." instance=ExtResource("3_mtame")]
-position = Vector2(32, -64)
-rotation = 0.523599
-
-[node name="House2" parent="." instance=ExtResource("3_mtame")]
-position = Vector2(50, -50)
-rotation = 0.785398
+[node name="House" parent="." instance=ExtResource("3_nojwk")]
+position = Vector2(-32, 131)
+rotation = 3.40339
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

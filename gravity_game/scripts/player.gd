@@ -20,7 +20,7 @@ var jetpacking = false
 
 var vector_rotation = 0
 var rotation_point = Vector2.ZERO
-var fuel = 3.0 :set = _change_fuel
+var fuel = 10.0 :set = _change_fuel
 var prev_vector = Vector2.ZERO
 var planet_pull = 0
 var rotating_around = null :set = _changed_rotating_around
@@ -81,7 +81,7 @@ func _physics_process(delta: float) -> void:
 			jetpacking = false
 			
 		else:
-			##fuel -= delta
+			fuel -= delta
 			if stable:
 				planet_movement.y -= 15
 				#if movement.y > -500:

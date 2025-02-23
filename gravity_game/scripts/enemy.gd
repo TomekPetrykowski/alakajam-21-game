@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 			alpha = position.angle_to_point(orbit_point) + deg_to_rad(-180)
 		orbit(delta)
 	else:
-		if orbit_point == Vector2.ZERO or position.distance_to(orbit_point)>110 or player.rotation_point !=orbit_point:
+		if orbit_point == Vector2.ZERO or position.distance_to(orbit_point)>radius+10 or player.rotation_point !=orbit_point:
 			alpha = null
 			look_at(player.position*2)
 			position+=(player.position-position).normalized()*delta*SPEED
@@ -57,7 +57,6 @@ func shoot():
 
 func _changed_orbit(new):
 	orbit_point = new
-	radius = 100
 	#alpha = position.angle_to_point(orbit_point) + deg_to_rad(-180)
 
 
