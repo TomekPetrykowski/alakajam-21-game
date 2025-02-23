@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://qyli6ao2lohc"]
+
+[ext_resource type="Script" path="res://scripts/enemy_lazer.gd" id="1_ekjvo"]
+[ext_resource type="Texture2D" uid="uid://ds3v2thyn17tm" path="res://assets/sprites/lazer.png" id="2_31njs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xo3f6"]
+size = Vector2(1, 2)
+
+[node name="Enemy_lazer" type="Area2D"]
+script = ExtResource("1_ekjvo")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xo3f6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_31njs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -64,9 +64,11 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0b3pk")
 autoplay = "default"
-frame_progress = 0.0250712
+frame_progress = 0.379435
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1.33514e-05)
 shape = SubResource("RectangleShape2D_45l5s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
