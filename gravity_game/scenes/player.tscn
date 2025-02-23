@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://3c3nr2wfmmss"]
+[gd_scene load_steps=13 format=3 uid="uid://3c3nr2wfmmss"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l070v"]
 [ext_resource type="Texture2D" uid="uid://ckyhrnc5u7yxp" path="res://assets/sprites/player/full_spritesheet.png" id="2_xqawr"]
@@ -41,7 +41,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ifb43"]
 resource_name = "flying"
-length = 0.1
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -50,10 +50,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [5]
+"values": [5, 1]
 }
 
 [sub_resource type="Animation" id="Animation_aldwp"]
@@ -78,7 +78,7 @@ resource_name = "new_animation"
 
 [sub_resource type="Animation" id="Animation_u2xqb"]
 resource_name = "walking"
-length = 0.3
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -87,10 +87,27 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [3, 7]
+}
+
+[sub_resource type="Animation" id="Animation_vkufr"]
+resource_name = "jetpacking"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [9, 11]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d7g1a"]
@@ -99,6 +116,7 @@ _data = {
 "floating": SubResource("Animation_7xlhu"),
 "flying": SubResource("Animation_ifb43"),
 "idle": SubResource("Animation_aldwp"),
+"jetpacking": SubResource("Animation_vkufr"),
 "new_animation": SubResource("Animation_0siqw"),
 "walking": SubResource("Animation_u2xqb")
 }
