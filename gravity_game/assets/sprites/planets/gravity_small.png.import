@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbjqsliq5q4ok"
-path="res://.godot/imported/blow.png-4c6bfba2d7c02bd7e37490c7f985378e.ctex"
+uid="uid://bqek3jy7nali5"
+path="res://.godot/imported/gravity_small.png-52b0970a989541c653ad1a1d1b05c0cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/others/blow.png"
-dest_files=["res://.godot/imported/blow.png-4c6bfba2d7c02bd7e37490c7f985378e.ctex"]
+source_file="res://assets/sprites/planets/gravity_small.png"
+dest_files=["res://.godot/imported/gravity_small.png-52b0970a989541c653ad1a1d1b05c0cf.ctex"]
 
 [params]
 

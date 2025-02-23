@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbsq5ssmj5ucn"
-path="res://.godot/imported/big_earth.png-5613ac45aec3613bbbf93bd5d477c216.ctex"
+uid="uid://cdir26c5m8iev"
+path="res://.godot/imported/gravity_mid.png-ecc719fbc5ffc1417cd5f997d5363494.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/planets/big_earth.png"
-dest_files=["res://.godot/imported/big_earth.png-5613ac45aec3613bbbf93bd5d477c216.ctex"]
+source_file="res://assets/sprites/planets/gravity_mid.png"
+dest_files=["res://.godot/imported/gravity_mid.png-ecc719fbc5ffc1417cd5f997d5363494.ctex"]
 
 [params]
 

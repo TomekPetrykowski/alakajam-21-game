@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb50weqvklo5t"
-path="res://.godot/imported/house_earth.png-168fb49ed1fa5ca9370bf8caa53024bd.ctex"
+uid="uid://dpo5st5ie3sdi"
+path="res://.godot/imported/gravity_earth.png-36816bc021fe69165a06c82dabe8ebe9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemies/house_earth.png"
-dest_files=["res://.godot/imported/house_earth.png-168fb49ed1fa5ca9370bf8caa53024bd.ctex"]
+source_file="res://assets/sprites/planets/gravity_earth.png"
+dest_files=["res://.godot/imported/gravity_earth.png-36816bc021fe69165a06c82dabe8ebe9.ctex"]
 
 [params]
 
