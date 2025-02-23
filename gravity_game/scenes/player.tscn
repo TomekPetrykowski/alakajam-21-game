@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://3c3nr2wfmmss"]
+[gd_scene load_steps=12 format=3 uid="uid://lfaekhw7h4oi"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l070v"]
 [ext_resource type="Texture2D" uid="uid://ckyhrnc5u7yxp" path="res://assets/sprites/player/full_spritesheet.png" id="2_xqawr"]
@@ -110,7 +110,7 @@ position = Vector2(4.76837e-07, 0)
 scale = Vector2(2, 2)
 texture = ExtResource("2_xqawr")
 hframes = 4
-vframes = 2
+vframes = 3
 frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
