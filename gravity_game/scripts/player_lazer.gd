@@ -18,6 +18,11 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
-		body.hp-=1
-	queue_free()
+	if body.name!="Player":
+		queue_free()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is Enemy or area is House:
+		area.hp-=1
+		queue_free()
