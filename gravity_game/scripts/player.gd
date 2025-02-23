@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 
 #@onready var planet = $"../StaticBody2D"
-@onready var fuel_label = $Fuel
-
+@onready var fuel_label = $Camera2D/Fuel
+@onready var hp_label = $Camera2D/Hp
+@onready var lazer_path = preload("res://scenes/player_lazer.tscn")
 const SPEED = 300.0
 const JUMP_VELOCITY = -300.0
 
@@ -19,11 +20,21 @@ var jetpacking = false
 
 var vector_rotation = 0
 var rotation_point = Vector2.ZERO
-var fuel = 3.0 :set = _change_fuel
+var fuel = 10.0 :set = _change_fuel
 var prev_vector = Vector2.ZERO
 var planet_pull = 0
 var rotating_around = null :set = _changed_rotating_around
 var pointing_to = Vector2(-1,0)
+
+var hp = 20 : set = _hp_changed
+
+
+func _hp_changed(new):
+	if new<=0:
+		print(":(")
+	else:
+		hp_label.text = "Hp:" + str(new)
+		hp=new
 
 func _physics_process(delta: float) -> void:
 	if rotating_around != null:
@@ -47,7 +58,6 @@ func _physics_process(delta: float) -> void:
 		jetpack_movement = Vector2.ZERO
 		self.fuel += delta*2
 		planet_movement.y = 0
-		$AnimationPlayer.play("idle")
 	else:
 		if jetpacking:
 			$AnimationPlayer.play("jetpacking")
@@ -71,7 +81,7 @@ func _physics_process(delta: float) -> void:
 			jetpacking = false
 			
 		else:
-			##fuel -= delta
+			fuel -= delta
 			if stable:
 				planet_movement.y -= 15
 				#if movement.y > -500:
@@ -107,6 +117,9 @@ func _physics_process(delta: float) -> void:
 	velocity += jetpack_movement
 	move_and_slide()
 	
+	if Input.is_action_just_pressed("left_mouse"):
+		shoot()
+	
 	#print(rad_to_deg($Sprite2D.rotation))
 	#print(rad_to_deg(get_local_mouse_position().angle()))
 	#print(rad_to_deg($Sprite2D.rotation-get_local_mouse_position().angle()))
@@ -120,7 +133,12 @@ func _physics_process(delta: float) -> void:
 	$Weapon.position = (get_local_mouse_position().normalized())*6*3
 	#print(velocity,planet_movement,jetpack_movement)
 	#print(position)
-	
+
+func shoot():
+	var lazer = lazer_path.instantiate()
+	lazer.direction = (get_local_mouse_position()*2).normalized()
+	lazer.position = position
+	get_parent().add_child(lazer)
 
 func _change_fuel(new):
 	if new < 0.0:
@@ -129,7 +147,7 @@ func _change_fuel(new):
 		fuel = 10.0
 	else:
 		fuel = new
-	fuel_label.text = str(snapped(fuel,0.01))+"s"
+	fuel_label.text = "Fuel:" + str(snapped(fuel,0.01))+"s"
 
 func _changed_rotating_around(new):
 	rotating_around = new

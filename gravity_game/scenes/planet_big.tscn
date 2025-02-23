@@ -1,14 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bpaw1dgbmrkti"]
+[gd_scene load_steps=9 format=3 uid="uid://b631r45l0aswy"]
 
-[ext_resource type="Script" path="res://scripts/planet.gd" id="1_hmtsp"]
-[ext_resource type="Texture2D" uid="uid://by7msrmy1t3i" path="res://assets/sprites/planets/red_small_planet.png" id="2_vywpl"]
-[ext_resource type="PackedScene" uid="uid://crlw43vv044h0" path="res://scenes/house.tscn" id="3_55seb"]
+[ext_resource type="Script" path="res://scripts/planet.gd" id="1_yjqid"]
+[ext_resource type="Texture2D" uid="uid://bbsq5ssmj5ucn" path="res://assets/sprites/planets/big_earth.png" id="2_dgsga"]
+[ext_resource type="PackedScene" uid="uid://b0kdyw2ujk16m" path="res://scenes/house_big.tscn" id="3_nojwk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l40aq"]
-radius = 32.0624
+radius = 128.25
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4b54k"]
-radius = 150.403
+radius = 344.093
 
 [sub_resource type="Animation" id="Animation_mbctx"]
 length = 0.001
@@ -49,8 +49,7 @@ _data = {
 }
 
 [node name="Planet" type="AnimatableBody2D"]
-script = ExtResource("1_hmtsp")
-metadata/_edit_group_ = true
+script = ExtResource("1_yjqid")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_l40aq")
@@ -67,19 +66,11 @@ libraries = {
 autoplay = "spin"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_vywpl")
+texture = ExtResource("2_dgsga")
 
-[node name="House" parent="." instance=ExtResource("3_55seb")]
-position = Vector2(38, 0)
-rotation = 1.5708
-
-[node name="House2" parent="." instance=ExtResource("3_55seb")]
-position = Vector2(25, -27)
-rotation = 0.785398
-
-[node name="House3" parent="." instance=ExtResource("3_55seb")]
-position = Vector2(0, 38)
-rotation = 3.14159
+[node name="House" parent="." instance=ExtResource("3_nojwk")]
+position = Vector2(-32, 131)
+rotation = 3.40339
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

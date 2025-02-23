@@ -64,7 +64,7 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0b3pk")
 autoplay = "default"
-frame_progress = 0.379435
+frame_progress = 0.457751
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
