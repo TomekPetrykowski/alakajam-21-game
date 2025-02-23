@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bpaw1dgbmrkti"]
 
 [ext_resource type="Script" path="res://scripts/planet.gd" id="1_hmtsp"]
-[ext_resource type="Texture2D" uid="uid://by7msrmy1t3i" path="res://assets/sprites/planets/red_small_planet.png" id="2_vywpl"]
+[ext_resource type="Texture2D" uid="uid://ducgjikdh0dlp" path="res://assets/sprites/planets/planet.png" id="2_ry276"]
 [ext_resource type="PackedScene" uid="uid://crlw43vv044h0" path="res://scenes/house.tscn" id="3_55seb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l40aq"]
@@ -67,7 +67,7 @@ libraries = {
 autoplay = "spin"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_vywpl")
+texture = ExtResource("2_ry276")
 
 [node name="House" parent="." instance=ExtResource("3_55seb")]
 position = Vector2(38, 0)

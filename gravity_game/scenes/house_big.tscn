@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0kdyw2ujk16m"]
 
 [ext_resource type="Script" path="res://scripts/house.gd" id="1_3j145"]
-[ext_resource type="Texture2D" uid="uid://cb50weqvklo5t" path="res://assets/sprites/enemies/house_earth.png" id="2_g21qk"]
+[ext_resource type="Texture2D" uid="uid://vnrtesjq4uln" path="res://assets/sprites/enemies/house_earth.png" id="2_g21qk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tv5yx"]
 size = Vector2(16, 16)

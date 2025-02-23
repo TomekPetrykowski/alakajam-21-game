@@ -5,7 +5,7 @@ class_name Enemy
 var orbit_point = Vector2.ZERO : set = _changed_orbit
 var SPEED = 50
 var alpha = null
-var radius = 20
+var radius = 0
 var angry = false
 var attack_delay = 1.0
 var hp = 4 : set = _hp_changed
