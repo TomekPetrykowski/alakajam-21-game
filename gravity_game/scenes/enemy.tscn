@@ -1,21 +1,71 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnoploch51opg"]
+[gd_scene load_steps=11 format=3 uid="uid://bnoploch51opg"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_3lbsa"]
-[ext_resource type="Texture2D" uid="uid://dfqiovgynqkeh" path="res://icon.svg" id="2_6w0e1"]
+[ext_resource type="Texture2D" uid="uid://crc3jsg6n5jty" path="res://assets/sprites/enemies/ship.png" id="2_vjoul"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke7h2"]
+atlas = ExtResource("2_vjoul")
+region = Rect2(0, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl8i6"]
+atlas = ExtResource("2_vjoul")
+region = Rect2(32, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4j4t"]
+atlas = ExtResource("2_vjoul")
+region = Rect2(64, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgsoe"]
+atlas = ExtResource("2_vjoul")
+region = Rect2(96, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d65c"]
+atlas = ExtResource("2_vjoul")
+region = Rect2(128, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oetyp"]
+atlas = ExtResource("2_vjoul")
+region = Rect2(160, 0, 32, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0b3pk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke7h2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kl8i6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4j4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgsoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d65c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oetyp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45l5s"]
-size = Vector2(34.1333, 73.1428)
+size = Vector2(32, 8)
 
 [node name="Enemy" type="Area2D"]
-position = Vector2(-512, 120)
-scale = Vector2(0.234375, 0.21875)
+position = Vector2(0, -4.76837e-07)
 script = ExtResource("1_3lbsa")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.52588e-05, -7.62939e-06)
-scale = Vector2(0.266666, 0.571428)
-texture = ExtResource("2_6w0e1")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0b3pk")
+autoplay = "default"
+frame_progress = 0.0250712
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1.33514e-05)
